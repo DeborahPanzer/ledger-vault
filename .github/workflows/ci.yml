@@ -1,0 +1,26 @@
+name: Ledger Integrity CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  verify-invariants:
+    name: Go Race & Invariant Verification
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Go runtime
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.22'
+
+      - name: Verify module integrity
+        run: go mod verify
+
+      - name: Execute unit tests with race detector
+        run: go test -v -race ./...

@@ -1,0 +1,40 @@
+# Compiled Go binaries and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+/bin/
+/dist/
+/ledger-vault
+
+# Test binaries, race profiles, and coverage artifacts
+*.test
+*.out
+*.prof
+coverage.txt
+coverage.html
+
+# Go workspace and vendor overrides
+go.work
+go.work.sum
+
+# Environment secrets, TLS certificates, and KMS keystores
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.crt
+
+# TLA+ model checker state directories
+/specs/states/
+*.dot
+
+# Editor and OS metadata
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

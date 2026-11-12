@@ -1,0 +1,12 @@
+# Enforce deterministic LF line endings across all operating systems
+* text=auto eol=lf
+
+# Classify SQL schemas and TLA+ formal proofs as documentation so GitHub Linguist reports Go 100%
+*.sql linguist-documentation
+*.tla linguist-documentation
+*.cfg linguist-documentation
+*.md linguist-documentation
+
+# Explicitly mark Go source files
+*.go text diff=golang
+go.mod text
